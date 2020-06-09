@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "917284060475",
+    "firebase_url": "https://elsalon-eebdb.firebaseio.com",
+    "project_id": "elsalon-eebdb",
+    "storage_bucket": "elsalon-eebdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:917284060475:android:54901875be512bcd948b1e",
+        "android_client_info": {
+          "package_name": "com.theapp.elsalonapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "917284060475-8tk1ohidjrrdv7rphnkk598eghgadfjl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQ2qgsNIfks00CM5PASUzYPTd3T8-DzSQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "917284060475-8tk1ohidjrrdv7rphnkk598eghgadfjl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
