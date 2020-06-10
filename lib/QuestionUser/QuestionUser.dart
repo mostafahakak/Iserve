@@ -83,12 +83,68 @@ class _AddInternalMeeting extends State<QuestionUser> with SingleTickerProviderS
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      appBar:AppBar(
+        title: Padding(padding: new EdgeInsets.only(left: 50),
+          child: Image.asset('images/iservebar.png', fit: BoxFit.cover),),
+        backgroundColor: Colors.white,
+        iconTheme: new IconThemeData(color: Colors.black),
+
+      ) ,
       body: _buildMainConent(),
     );
   }
 
   _buildMainConent() {
 
+    final CatgControler = TextEditingController();
+
+    showAlertDialog(BuildContext context) {
+
+      // set up the list options
+      Widget optionOne = SimpleDialogOption(
+        child: const Text('Fitness'),
+        onPressed: () {
+          CatgControler.text = 'Fitness';
+        },
+      );
+      Widget optionTwo = SimpleDialogOption(
+        child: const Text('Vet'),
+        onPressed: () {
+          CatgControler.text = 'Vet';
+        },
+      );
+      Widget optionThree = SimpleDialogOption(
+        child: const Text('Lawyer'),
+        onPressed: () {
+          CatgControler.text = 'Lawyer';
+        },
+      );
+      Widget optionFour = SimpleDialogOption(
+        child: const Text('Doctor'),
+        onPressed: () {
+          CatgControler.text = 'Doctor';
+        },
+      );
+
+      // set up the SimpleDialog
+      SimpleDialog dialog = SimpleDialog(
+        title: const Text('Choose Category'),
+        children: <Widget>[
+          optionOne,
+          optionTwo,
+          optionThree,
+          optionFour,
+        ],
+      );
+
+      // show the dialog
+      showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return dialog;
+        },
+      );
+    }
 
     return  Container(
       child:
@@ -101,6 +157,29 @@ class _AddInternalMeeting extends State<QuestionUser> with SingleTickerProviderS
               Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20,right: 20,left: 20) ,
+                      child: RaisedButton(
+                        color: const Color(0xff007944),
+                        child: Text('Choose Category'),
+                        shape:  RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+                        onPressed: () {
+                          showAlertDialog(context);
+                        },
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 20,right: 20,left: 20) ,
+                      child:  TextField(
+                        style: TextStyle(color: const Color(0xff007944)),
+                        controller: CatgControler,
+                        textAlign: TextAlign.center,
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: 'Please choose Category'
+                        ),
+                      ),
+                    ),
                     Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child:new Text('My Question',
@@ -231,3 +310,6 @@ class _AddInternalMeeting extends State<QuestionUser> with SingleTickerProviderS
 
 
 }
+
+
+// replace this function with the examples above

@@ -1,3 +1,4 @@
+import 'package:elsalonapp/screens/AskQuestion.dart';
 import 'package:elsalonapp/screens/MyQuestions.dart';
 import 'package:elsalonapp/screens/profile.dart';
 import 'package:elsalonapp/services/authservice.dart';
@@ -18,7 +19,8 @@ class _DashboardPageState extends State<DashboardPage> with SingleTickerProvider
   final _pageOptions = [
     Test(),
     MyQuestions(),
-    MyHomePage()
+    MyHomePage(),
+    AskQuestion()
   ];
 
   @override
@@ -114,6 +116,12 @@ class _DashboardPageState extends State<DashboardPage> with SingleTickerProvider
           BottomNavigationBarItem(
             icon: Icon(Icons.face,color: const Color(0xff007944)),
             title: Text('Profile',style: TextStyle(
+              color: Colors.black,
+            )),
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.question_answer,color: const Color(0xff007944)),
+            title: Text('Ask',style: TextStyle(
               color: Colors.black,
             )),
           ),

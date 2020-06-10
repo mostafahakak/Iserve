@@ -78,7 +78,7 @@ class _State extends State<Test> {
                       child:  Divider(color: Colors.black,),
                     ),
                     StreamBuilder( stream: FirebaseDatabase.instance
-                        .reference().child("Categories")
+                        .reference().child("Categories").child("Info")
                         .onValue,
                         builder: (BuildContext context, AsyncSnapshot<Event> snapshot) {
                           if (snapshot.hasData) {
@@ -174,7 +174,7 @@ class _State extends State<Test> {
                   ),
                   padding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
                   child: Text(
-                    'No. ${CrossList.indexOf(item)} image',
+                    'No. ${imgList.indexOf(item)} image',
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20.0,
